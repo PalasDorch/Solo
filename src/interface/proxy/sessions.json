@@ -327,6 +327,14 @@
     {
       "role": "assistant",
       "content": "Pong! What would"
+    },
+    {
+      "role": "user",
+      "content": "ping"
+    },
+    {
+      "role": "assistant",
+      "content": "Pong! How can"
     }
   ]
 }
