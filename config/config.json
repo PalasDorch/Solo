@@ -1,0 +1,6 @@
+{
+  "version": "0.8.2",
+  "model": "RWKV-x070-World-2.9B-v3",
+  "components": ["memory", "planner", "executor"]
+}
+

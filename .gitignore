@@ -1,0 +1,56 @@
+# Model weights
+*.pth
+*.bin
+*.onnx
+*.safetensors
+*.pt
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.so
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# Logs
+*.log
+logs/
+*.log.*
+
+# Datasets
+*.csv
+*.parquet
+*.arrow
+data/
+datasets/
+
+# Credentials
+.env
+*.key
+*.pem
+secrets/
+credentials/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Large files
+*.zip
+*.tar.gz
+*.7z
+

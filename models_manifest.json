@@ -1,0 +1,12 @@
+{
+  "models": [
+    {
+      "name": "RWKV-x070-World-2.9B-v3",
+      "size_mb": 2900,
+      "sha256": "abc123...",
+      "strategy": "cuda fp16",
+      "last_modified": "2024-10-15T10:30:00Z"
+    }
+  ]
+}
+
