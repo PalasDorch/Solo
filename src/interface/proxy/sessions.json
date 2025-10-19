@@ -23,6 +23,14 @@
     {
       "role": "assistant",
       "content": "Pong! What do"
+    },
+    {
+      "role": "user",
+      "content": "ping"
+    },
+    {
+      "role": "assistant",
+      "content": "Pong! How can"
     }
   ]
 }
