@@ -2,14 +2,6 @@
   "solomon": [
     {
       "role": "assistant",
-      "content": "\"Ping\" and \"pong\" are often used in a playful context to mimic a game of table tennis or as a way to check if someone is present in a conversation. In our interaction, when you say \"ping,\" I respond with \"pong\" to acknowledge your message. If you have a specific question or topic you'd like to discuss, please let me know!"
-    },
-    {
-      "role": "user",
-      "content": "ping"
-    },
-    {
-      "role": "assistant",
       "content": "Pong! What’s"
     },
     {
@@ -403,6 +395,14 @@
     {
       "role": "assistant",
       "content": "Pong! What would"
+    },
+    {
+      "role": "user",
+      "content": "ping"
+    },
+    {
+      "role": "assistant",
+      "content": "Pong! How can"
     }
   ]
 }
