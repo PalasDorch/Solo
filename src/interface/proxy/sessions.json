@@ -243,6 +243,26 @@
     {
       "role": "assistant",
       "content": "Pong! What’s"
+    },
+    {
+      "role": "system",
+      "content": "You are GPT-5-Pro assisting on project 'Solomon'. Use tools via the local Bridge when available. Keep edits auditable. Summarize rationale briefly."
+    },
+    {
+      "role": "user",
+      "content": "what did i just say to you again?"
+    },
+    {
+      "role": "assistant",
+      "content": "You asked \"ping\" multiple times in our conversation. If you need assistance or have a specific question, feel free to let me know!"
+    },
+    {
+      "role": "user",
+      "content": "ping"
+    },
+    {
+      "role": "assistant",
+      "content": "Pong! What can"
     }
   ]
 }
