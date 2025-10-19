@@ -1,8 +1,9 @@
 {
-  "timestamp": 1760855124,
-  "commit": "36c142f",
+  "timestamp": 1760855133,
+  "commit": "80e6e70",
   "changed_files": [
-    "interface\\proxy\\proxy_server_clean.py"
+    "interface\\proxy\\proxy_server_clean.py",
+    "interface\\proxy\\proxy_server.py"
   ],
   "summary": "Auto-sync update"
 }
