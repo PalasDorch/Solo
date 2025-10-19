@@ -2,14 +2,6 @@
   "solomon": [
     {
       "role": "user",
-      "content": "ping"
-    },
-    {
-      "role": "assistant",
-      "content": "Pong! How can"
-    },
-    {
-      "role": "user",
       "content": "if i shut down this screen, will we lose context?"
     },
     {
@@ -403,6 +395,14 @@
     {
       "role": "assistant",
       "content": "Pong! How can"
+    },
+    {
+      "role": "user",
+      "content": "ping"
+    },
+    {
+      "role": "assistant",
+      "content": "Pong! What would"
     }
   ]
 }
