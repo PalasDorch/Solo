@@ -1,4 +1,12 @@
 ﻿{
-  "files": [],
+  "files": [
+    {
+      "name": "RWKV-x070-World-2.9B-v3-20250211-ctx4096.pth",
+      "path": "S:/Solomon/models/RWKV-x070-World-2.9B-v3-20250211-ctx4096.pth",
+      "size_mb": 2850,
+      "sha256": "placeholder",
+      "mtime": 1729287000
+    }
+  ],
   "active": "RWKV-x070-World-2.9B-v3"
 }
