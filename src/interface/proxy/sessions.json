@@ -99,6 +99,22 @@
     {
       "role": "assistant",
       "content": "Pong! What’s"
+    },
+    {
+      "role": "user",
+      "content": "which model of chat gpt is this?"
+    },
+    {
+      "role": "assistant",
+      "content": "I'm based on the GPT-4 architecture. How can I assist you further?"
+    },
+    {
+      "role": "user",
+      "content": "ping"
+    },
+    {
+      "role": "assistant",
+      "content": "Pong! What would"
     }
   ]
 }
