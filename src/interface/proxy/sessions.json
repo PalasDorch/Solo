@@ -2,14 +2,6 @@
   "solomon": [
     {
       "role": "user",
-      "content": "if i shut down this screen, will we lose context?"
-    },
-    {
-      "role": "assistant",
-      "content": "Yes, if you shut down the screen or close the chat, the context of our conversation will be lost. When you come back, it will start a new session without the previous chat history. If you have any important information you want to keep, it's a good idea to save it before closing the chat."
-    },
-    {
-      "role": "user",
       "content": "ping"
     },
     {
@@ -403,6 +395,14 @@
     {
       "role": "assistant",
       "content": "Pong! What would"
+    },
+    {
+      "role": "user",
+      "content": "ping"
+    },
+    {
+      "role": "assistant",
+      "content": "Pong! How can"
     }
   ]
 }
