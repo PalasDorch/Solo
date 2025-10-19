@@ -64,7 +64,7 @@ if ($ProxyJob.State -ne "Running") {
     exit 1
 }
 
-Write-Host "✓ Proxy running (Job ID: $($ProxyJob.Id))" -ForegroundColor Green
+Write-Host "[OK] Proxy running (Job ID: $($ProxyJob.Id))" -ForegroundColor Green
 
 # Start UI
 Write-Host ""
@@ -97,6 +97,5 @@ try {
     Write-Host "Stopping services..." -ForegroundColor Yellow
     Stop-Job $ProxyJob
     Remove-Job $ProxyJob
-    Write-Host "✓ All services stopped" -ForegroundColor Green
+    Write-Host "[OK] All services stopped" -ForegroundColor Green
 }
-

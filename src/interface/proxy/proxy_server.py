@@ -1,102 +1,62 @@
-"""
-GPT Proxy Server
-Proxies ChatGPT requests to hide API key from browser
-"""
-
-from fastapi import FastAPI, HTTPException
-from fastapi.middleware.cors import CORSMiddleware
-from pydantic import BaseModel
-from typing import List, Optional, Dict, Any
-import os
-from dotenv import load_dotenv
-import openai
-
-# Load environment variables
-load_dotenv()
-
-OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
-OPENAI_MODEL = os.getenv("OPENAI_MODEL", "gpt-4o-mini")
-PROXY_PORT = int(os.getenv("PROXY_PORT", "8601"))
-CORS_ORIGIN = os.getenv("CORS_ORIGIN", "http://127.0.0.1:5173")
-
-if not OPENAI_API_KEY or OPENAI_API_KEY == "sk-PLACEHOLDER":
-    print("WARNING: OPENAI_API_KEY not set or is placeholder")
-
-# Initialize OpenAI client
-client = openai.OpenAI(api_key=OPENAI_API_KEY)
-
-app = FastAPI(title="GPT Proxy", version="1.0.0")
-
-# CORS
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=[CORS_ORIGIN, "http://localhost:5173", "http://localhost:5174"],
-    allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
-)
-
-
-class Message(BaseModel):
-    role: str
-    content: str
-
-
-class ChatRequest(BaseModel):
-    messages: List[Message]
-    model: Optional[str] = None
-    temperature: Optional[float] = 0.7
-    max_tokens: Optional[int] = 1000
-
-
-@app.get("/health")
-async def health():
-    """Health check"""
-    return {"ok": True, "service": "gpt-proxy"}
-
-
-@app.post("/gpt/chat")
-async def gpt_chat(request: ChatRequest):
-    """
-    Proxy ChatGPT requests
-    """
-    try:
-        # Use model from request or default
-        model = request.model or OPENAI_MODEL
-        
-        # Convert messages to OpenAI format
-        messages = [{"role": msg.role, "content": msg.content} for msg in request.messages]
-        
-        # Call OpenAI API
-        response = client.chat.completions.create(
-            model=model,
-            messages=messages,
-            temperature=request.temperature,
-            max_tokens=request.max_tokens
-        )
-        
-        # Extract reply
-        reply = response.choices[0].message.content
-        
-        return {
-            "reply": reply,
-            "model": model,
-            "usage": {
-                "prompt_tokens": response.usage.prompt_tokens,
-                "completion_tokens": response.usage.completion_tokens,
-                "total_tokens": response.usage.total_tokens
-            }
-        }
-    
-    except openai.AuthenticationError:
-        raise HTTPException(status_code=401, detail="Invalid OpenAI API key")
-    except openai.RateLimitError:
-        raise HTTPException(status_code=429, detail="OpenAI rate limit exceeded")
-    except Exception as e:
-        raise HTTPException(status_code=500, detail=f"OpenAI API error: {str(e)}")
-
-
-if __name__ == "__main__":
-    import uvicorn
-    uvicorn.run(app, host="127.0.0.1", port=PROXY_PORT, log_level="info")
-
+Text file: proxy_server.py
+Latest content with line numbers:
+101	    save_sessions()
+102	
+103	
+104	@app.get("/health")
+105	async def health():
+106	    """Health check"""
+107	    return {"ok": True, "service": "gpt-proxy", "sessions": len(SESSIONS)}
+108	
+109	
+110	@app.post("/gpt/chat")
+111	async def gpt_chat(request: ChatRequest):
+112	    """
+113	    Proxy ChatGPT requests with session persistence
+114	    """
+115	    try:
+116	        session_id = request.session or "solomon"
+117	        model = request.model or OPENAI_MODEL
+118	        
+119	        # Initialize session if needed
+120	        if session_id not in SESSIONS:
+121	            SESSIONS[session_id] = []
+122	        
+123	        # Append incoming messages to session
+124	        for msg in request.messages:
+125	            SESSIONS[session_id].append({"role": msg.role, "content": msg.content})
+126	        
+127	        # Trim if needed
+128	        trim_session(session_id)
+129	        
+130	        # Call OpenAI API with full session history
+131	        response = client.chat.completions.create(
+132	            model=model,
+133	            messages=SESSIONS[session_id],
+134	            temperature=request.temperature,
+135	            max_tokens=request.max_tokens
+136	        )
+137	        
+138	        # Extract reply
+139	        reply = response.choices[0].message.content
+140	        
+141	        # Append assistant reply to session
+142	        SESSIONS[session_id].append({"role": "assistant", "content": reply})
+143	        
+144	        # Save to disk
+145	        save_sessions()
+146	        
+147	        return {
+148	            "reply": reply,
+149	            "model": model,
+150	            "session": session_id,
+151	            "context_length": len(SESSIONS[session_id]),
+152	            "usage": {
+153	                "prompt_tokens": response.usage.prompt_tokens,
+154	                "completion_tokens": response.usage.completion_tokens,
+155	                "total_tokens": response.usage.total_tokens
+156	            }
+157	        }
+158	    
+159	    except openai.AuthenticationError:
+160	        raise HTTPException(status_code=401, detail="Invalid OpenAI API key")
