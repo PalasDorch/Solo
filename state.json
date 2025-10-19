@@ -1,8 +1,8 @@
-{
-  "version": "0.8.2",
+﻿{
+  "version": "0.1.0",
   "active_model": "RWKV-x070-World-2.9B-v3",
+  "strategy": "cpu fp32",
   "components": ["memory", "planner", "executor"],
-  "tasks_open": 3,
-  "last_updated": 1729280000
+  "last_restart": 1729287600,
+  "issues_open": []
 }
-
