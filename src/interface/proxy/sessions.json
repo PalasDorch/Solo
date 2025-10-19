@@ -51,6 +51,22 @@
     {
       "role": "assistant",
       "content": "Pong! What would"
+    },
+    {
+      "role": "user",
+      "content": "ping"
+    },
+    {
+      "role": "assistant",
+      "content": "Pong! How can"
+    },
+    {
+      "role": "user",
+      "content": "how do you know that?"
+    },
+    {
+      "role": "assistant",
+      "content": "I know that we're having a consistent chat because the conversation history is maintained throughout our interaction. This allows us to build on previous messages and keeps the context intact. If you have any specific questions or topics you'd like to discuss, feel free to share!"
     }
   ]
 }
