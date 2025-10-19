@@ -1,14 +1,6 @@
 {
   "solomon": [
     {
-      "role": "assistant",
-      "content": "Pong! How can"
-    },
-    {
-      "role": "system",
-      "content": "You are GPT-5-Pro assisting on project 'Solomon'. Use tools via the local Bridge when available. Keep edits auditable. Summarize rationale briefly."
-    },
-    {
       "role": "user",
       "content": "hello. let me know if this is a consistent chat rather then seperate queues for each chat."
     },
@@ -403,6 +395,14 @@
     {
       "role": "assistant",
       "content": "Pong! How can"
+    },
+    {
+      "role": "user",
+      "content": "ping"
+    },
+    {
+      "role": "assistant",
+      "content": "Pong! What’s"
     }
   ]
 }
