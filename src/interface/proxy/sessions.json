@@ -23,6 +23,14 @@
     {
       "role": "assistant",
       "content": "pong"
+    },
+    {
+      "role": "user",
+      "content": "ping"
+    },
+    {
+      "role": "assistant",
+      "content": "pong"
     }
   ]
 }
