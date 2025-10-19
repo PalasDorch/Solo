@@ -2,14 +2,6 @@
   "solomon": [
     {
       "role": "user",
-      "content": "hello. let me know if this is a consistent chat rather then seperate queues for each chat."
-    },
-    {
-      "role": "assistant",
-      "content": "Hello! Yes, this is a consistent chat. We can continue our conversation seamlessly without starting a new queue for each message. How can I assist you today?"
-    },
-    {
-      "role": "user",
       "content": "ping"
     },
     {
@@ -403,6 +395,14 @@
     {
       "role": "assistant",
       "content": "Pong! What’s"
+    },
+    {
+      "role": "user",
+      "content": "ping"
+    },
+    {
+      "role": "assistant",
+      "content": "Pong! How can"
     }
   ]
 }
