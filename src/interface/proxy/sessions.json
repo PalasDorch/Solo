@@ -2,14 +2,6 @@
   "solomon": [
     {
       "role": "assistant",
-      "content": "Pong! What can"
-    },
-    {
-      "role": "user",
-      "content": "nope."
-    },
-    {
-      "role": "assistant",
       "content": "I apologize for the oversight. Can you please clarify what you meant?"
     },
     {
@@ -403,6 +395,14 @@
     {
       "role": "assistant",
       "content": "Pong! How can"
+    },
+    {
+      "role": "user",
+      "content": "ping"
+    },
+    {
+      "role": "assistant",
+      "content": "Pong! What would"
     }
   ]
 }
