@@ -123,6 +123,14 @@
     {
       "role": "assistant",
       "content": "Pong! How can"
+    },
+    {
+      "role": "user",
+      "content": "ping"
+    },
+    {
+      "role": "assistant",
+      "content": "Pong! What do"
     }
   ]
 }
