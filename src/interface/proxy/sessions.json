@@ -2,14 +2,6 @@
   "solomon": [
     {
       "role": "assistant",
-      "content": "You asked \"ping\" multiple times in our conversation. If you need assistance or have a specific question, feel free to let me know!"
-    },
-    {
-      "role": "user",
-      "content": "ping"
-    },
-    {
-      "role": "assistant",
       "content": "Pong! What can"
     },
     {
@@ -403,6 +395,14 @@
     {
       "role": "assistant",
       "content": "Pong! How can"
+    },
+    {
+      "role": "user",
+      "content": "ping"
+    },
+    {
+      "role": "assistant",
+      "content": "Pong! What’s"
     }
   ]
 }
