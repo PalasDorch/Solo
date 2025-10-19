@@ -2,14 +2,6 @@
   "solomon": [
     {
       "role": "assistant",
-      "content": "Pong! What’s"
-    },
-    {
-      "role": "user",
-      "content": "no. i didnt. what was the last few messages i sent you?"
-    },
-    {
-      "role": "assistant",
       "content": "The last few messages you sent were \"ping\" multiple times, along with a question asking what \"ping\" and \"pong\" mean. If you need clarification or have further questions, feel free to ask!"
     },
     {
@@ -403,6 +395,14 @@
     {
       "role": "assistant",
       "content": "Pong! How can"
+    },
+    {
+      "role": "user",
+      "content": "ping"
+    },
+    {
+      "role": "assistant",
+      "content": "Pong! What’s"
     }
   ]
 }
